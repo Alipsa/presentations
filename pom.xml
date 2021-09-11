@@ -10,9 +10,8 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <!-- general information about your package -->
   <name>presentations</name>
-  <description>TODO: write a short description here</description>
+  <description>Renjin R library to create presentations in the Powerpoint or Open Office Impress formats</description>
 
   <properties>
     <renjin.version>3.5-beta76</renjin.version>
@@ -49,13 +48,6 @@
       <groupId>org.renjin</groupId>
       <artifactId>hamcrest</artifactId>
       <version>${renjin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- the testthat package is only required if you use it for unit tests -->
-    <dependency>
-      <groupId>org.renjin.cran</groupId>
-      <artifactId>testthat</artifactId>
-      <version>2.1.1-b2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -196,11 +188,4 @@
       </plugin>
     </plugins>
   </build>
-  <!-- TODO: uncomment this and add the real url if you have a repository to deploy to -->
-  <!--distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://some.server:8081/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement-->
 </project>
