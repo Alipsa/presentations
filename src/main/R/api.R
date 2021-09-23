@@ -4,8 +4,8 @@
 
 # type is either "pptx" or "odp"
 create.presentation <- function(type = "pptx") {
-  if (! type %in% c("pptx", "odp") {
-    stop(paste0("Unknown presentation type '", type, "', expected either 'pptx' or 'odp'")
+  if (! type %in% c("pptx", "odp")) {
+    stop(paste0("Unknown presentation type '", type, "', expected either 'pptx' or 'odp'"))
   }
   
 }

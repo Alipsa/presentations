@@ -2,9 +2,5 @@
 
 PptxPresentation <- setRefClass(
   Class = "PptxPresentation",
-  contains = "Presentation",
-  fields = list(
-    
-  )
-
+  contains = "Presentation"
 )

@@ -12,7 +12,26 @@
 
   <name>presentations</name>
   <description>Renjin R library to create presentations in the Powerpoint or Open Office Impress formats</description>
-
+  <url>https://github.com/alipsa/presentations</url>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://github.com/alipsa/presentations/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Per Nyfelt</name>
+      <email>per.nyfelt@alipsa.se</email>
+      <organization>Alipsa HB</organization>
+      <organizationUrl>http://www.alipsa.se</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/alipsa/presentations.git</connection>
+    <developerConnection>scm:git:https://github.com/alipsa/presentations.git</developerConnection>
+    <url>https://github.com/alipsa/presentations/tree/master</url>
+  </scm>
   <properties>
     <renjin.version>3.5-beta76</renjin.version>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -85,7 +104,9 @@
             <goals>
               <goal>namespace-compile</goal>
             </goals>
-            <phase>process-classes</phase>
+            <configuration>
+              <sourceDirectory>${basedir}/src/main/R</sourceDirectory>
+            </configuration>
           </execution>
         </executions>
         <dependencies>

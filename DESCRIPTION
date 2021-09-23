@@ -1,0 +1,26 @@
+Package: presentations
+Version: 0.1.0.9001
+Date: 2021-09-23
+Title: Create Presentations
+Authors@R: c(
+    person("Per", "Nyfelt", email = "per@alipsa.se", role = c("cre", "aut")),
+    person("Alipsa HB", email = "info@alipsa.se", role = "cph")
+    )
+Author:
+    Per Nyfelt [cre, aut],
+    Alipsa HB [cph]
+Maintainer: Per Nyfelt <per@alipsa.se>
+Depends: R (>= 3.1.0)
+Encoding: UTF-8
+Description: Renjin R library to create presentations in the Powerpoint or Open Office Impress formats.
+License: MIT + file LICENSE
+URL: https://github.com/Alipsa/presentations
+BugReports: https://github.com/Alipsa/presentations/issues
+Imports:
+    methods
+Collate:
+  'Presentation.R'
+  'Slide.R'
+  'api.R'
+  'PptxPresentation.R'
+  'PptxSlide.R'

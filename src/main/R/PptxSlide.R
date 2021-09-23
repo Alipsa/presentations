@@ -2,8 +2,5 @@
 
 PptxSlide <- setRefClass(
   Class = "PptxSlide",
-  fields = list(
-    
-  )
-
+  contains = "Slide"
 )
