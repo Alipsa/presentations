@@ -6,12 +6,13 @@ Slide <- setRefClass(
     m_name = "character"
   ),
   methods = list(
+    
     getName = function() {
       m_name
     },
     
     setName = function(name) {
-      "Set the name of this Element"
+      "Set the name of this Slide"
       m_name <<- as.character(name)
       invisible(.self)
     }

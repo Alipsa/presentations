@@ -2,5 +2,16 @@
 
 PptxSlide <- setRefClass(
   Class = "PptxSlide",
-  contains = "Slide"
+  contains = "Slide",
+  
+  fields = list(
+    pptSlide = "ANY"
+  ),
+  
+  methods = list(
+    initialize = function(slide) {
+      "PptxSlide constructor"
+      pptSlide <<- slide
+    }
+  )
 )

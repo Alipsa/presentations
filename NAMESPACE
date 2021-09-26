@@ -3,6 +3,9 @@
 # see http://docs.renjin.org/en/latest/writing-renjin-extensions.html for details about the syntax
 
 import(methods)
+
+importClasses(org.apache.poi.xslf.usermodel.XMLSlideShow)
+
 export(Presentation)
 exportClasses(Presentation)
 export(Slide)

@@ -6,9 +6,7 @@ Presentation <- setRefClass(
     slides  = "list"
   ),
   methods = list(
-    addSlide <- function() {
-
-    },
+    addSlide <- function(layout = "NONE") {},
     removeSlide <- function(slide) {
 
     },

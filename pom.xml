@@ -12,6 +12,7 @@
 
   <name>presentations</name>
   <description>Renjin R library to create presentations in the Powerpoint or Open Office Impress formats</description>
+
   <url>https://github.com/alipsa/presentations</url>
   <licenses>
     <license>
@@ -61,6 +62,11 @@
       <version>${slf4j.version}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.0.0</version>
+    </dependency>
 
     <!-- the hamcrest package is only required if you use it for unit tests -->
     <dependency>
@@ -104,9 +110,7 @@
             <goals>
               <goal>namespace-compile</goal>
             </goals>
-            <configuration>
-              <sourceDirectory>${basedir}/src/main/R</sourceDirectory>
-            </configuration>
+            <phase>process-classes</phase>
           </execution>
         </executions>
         <dependencies>
