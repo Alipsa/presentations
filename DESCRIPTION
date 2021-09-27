@@ -22,5 +22,3 @@ Collate:
   'Presentation.R'
   'Slide.R'
   'api.R'
-  'PptxPresentation.R'
-  'PptxSlide.R'

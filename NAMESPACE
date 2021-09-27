@@ -5,8 +5,6 @@
 import(methods)
 
 importClass(se.alipsa.presentations.PptxExporter)
-importClass(org.apache.poi.xslf.usermodel.XMLSlideShow)
-importClass(org.apache.poi.xslf.usermodel.SlideLayout)
 
 # api.R
 export(create.presentation, read.presentation, write.presentation)
