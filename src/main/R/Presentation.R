@@ -11,26 +11,16 @@ Presentation <- setRefClass(
       slide <- Slide$new()
       slide$setLayout(layout)
       slides[[length(slides) + 1]] <<- slide
+      slide
+    },
+    
+    removeSlide = function(slideNumber) {
+      slides <<- slides[!slideNumber]
       invisible(.self)
     },
     
-    removeSlide = function(slide) {
-
-    },
-    removeSlideByName = function(slideName) {
-
-    },
-    
-    removeSlideAt = function(index) {
-
-    },
-    
     getSlideAt = function(index) {
-
-    },
-    
-    getSlideByName = function(slideName) {
-
+      slides[index]
     },
     
     getSlides = function() {

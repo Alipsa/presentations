@@ -1,10 +1,7 @@
 package se.alipsa.presentations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.poi.xslf.usermodel.XMLSlideShow;
-import org.apache.poi.xslf.usermodel.XSLFSlide;
-import org.apache.poi.xslf.usermodel.XSLFSlideLayout;
-import org.apache.poi.xslf.usermodel.XSLFSlideMaster;
+import org.apache.poi.xslf.usermodel.*;
 import org.renjin.sexp.StringArrayVector;
 
 import java.io.File;
@@ -32,10 +29,10 @@ public class PptxExporter {
       XSLFSlideLayout layout = getLayout(slide.getLayout(), slideMaster);
       XSLFSlide pptSlide;
       if (layout == null) {
-        System.out.println("Creating a slide without layout");
+        //System.out.println("Creating a slide without layout");
         pptSlide = ppt.createSlide();
       } else {
-        System.out.println("Creating a slide with layout " + layout);
+        //System.out.println("Creating a slide with layout " + slide.getLayout());
         pptSlide = ppt.createSlide(layout);
       }
       pptSlide.setHidden(slide.isHidden());
@@ -51,7 +48,15 @@ public class PptxExporter {
     if (layout == null) {
       return null;
     }
-    return slideMaster.getLayout(layout);
+    if ("NONE".equalsIgnoreCase(layout)) {
+      return slideMaster.getLayout(SlideLayout.BLANK);
+    }
+    try {
+      return slideMaster.getLayout(SlideLayout.valueOf(layout.toUpperCase()));
+    } catch (IllegalArgumentException e) {
+      System.err.println("Layout '" + layout + "', does not exist");
+      return null;
+    }
   }
 
 }

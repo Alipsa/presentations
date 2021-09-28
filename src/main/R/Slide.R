@@ -4,7 +4,8 @@ Slide <- setRefClass(
   Class = "Slide",
   fields = list(
     hidden = "logical",
-    layout = "character"
+    layout = "character",
+    contentList = "list"
   ),
   methods = list(
     
@@ -23,8 +24,14 @@ Slide <- setRefClass(
       layout <<- as.character(layout)
       invisible(.self)
     },
+
+    setContent = function(index, content) {
+      content[index] <<- content
+      invisible(.self)
+    },
     
     toJSON = function() {
+      "this Slide as a json string"
       paste0('{ "hidden" : "', hidden, '", "layout" : "', layout, '" }')
     }
   )
