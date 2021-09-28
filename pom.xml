@@ -141,7 +141,7 @@
         <artifactId>renjin-test-maven-plugin</artifactId>
         <version>1.3.6</version>
         <configuration>
-          <testFailureIgnore>true</testFailureIgnore>
+          <testFailureIgnore>false</testFailureIgnore>
         </configuration>
         <executions>
           <execution>

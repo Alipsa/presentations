@@ -11,6 +11,8 @@ test.exportToPptx <- function() {
   pres <- create.presentation()
   assertFalse(is.null(pres))
   pres$addSlide("TITLE")
-  write.presentation(pres, "test.pptx")
-  #assertTrue(file.exists("test.pptx"))
+  pres$addSlide("TITLE_AND_CONTENT")
+  pptFile <- file.path(getwd(), "test.pptx")
+  write.presentation(pres, pptFile)
+  assertTrue(file.exists(pptFile))
 }

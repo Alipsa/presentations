@@ -9,9 +9,9 @@ Presentation <- setRefClass(
   
     addSlide = function(layout = "NONE") {
       slide <- Slide$new()
-      slide$setName(as.character(length(slides) + 1))
       slide$setLayout(layout)
       slides[[length(slides) + 1]] <<- slide
+      invisible(.self)
     },
     
     removeSlide = function(slide) {
@@ -38,12 +38,11 @@ Presentation <- setRefClass(
     },
     
     toJSON = function() {
-      contents <- NULL
+      contents <- c()
       for (slide in slides) {
-          contents <- c(contents, slide$toJSON())
+        contents <- c(contents, slide$toJSON())
       }
-
-      paste0('{ "slides" : [', paste(contents, sep=', '), ']}')
+      paste0('{ "slides" : [', paste(contents, collapse = ', '), ']}')
     }
   )
 )

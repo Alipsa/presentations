@@ -3,18 +3,18 @@
 Slide <- setRefClass(
   Class = "Slide",
   fields = list(
-    m_name = "character",
+    hidden = "logical",
     layout = "character"
   ),
   methods = list(
     
-    getName = function() {
-      m_name
+    isHidden = function() {
+      hidden
     },
     
-    setName = function(name) {
-      "Set the name of this Slide"
-      m_name <<- as.character(name)
+    setHidden = function(hidden) {
+      "Set the hidden attribute of this Slide"
+      hidden <<- as.logical(hidden)
       invisible(.self)
     },
     
@@ -25,7 +25,7 @@ Slide <- setRefClass(
     },
     
     toJSON = function() {
-      paste0('{ "name" : "', m_name, '", "layout" : "', layout, '" }')
+      paste0('{ "hidden" : "', hidden, '", "layout" : "', layout, '" }')
     }
   )
 )

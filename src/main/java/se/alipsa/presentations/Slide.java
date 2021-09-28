@@ -2,15 +2,15 @@ package se.alipsa.presentations;
 
 public class Slide {
 
-  private String name;
+  private boolean hidden = false;
   private String layout;
 
-  public String getName() {
-    return name;
+  public boolean isHidden() {
+    return hidden;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setHidden(boolean hidden) {
+    this.hidden = hidden;
   }
 
   public String getLayout() {
